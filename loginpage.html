@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+ body {
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(21, 0, 49)); /* Gradient from dark purple to black */
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .login-container {
+    border: 2px solid darkviolet;
+    padding: 40px;
+    border-radius: 50%; /* Fully rounded container */
+    width: 300px;
+    text-align: center; /* Center the text for aesthetics */
+  }
+  input[type="text"], input[type="password"], input[type="submit"] {
+    background-color: #222;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 15px; /* Rounded corners for input fields */
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+  }
+  input[type="submit"] {
+    background-color: darkviolet;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: rebeccapurple;
+  }
+  .login-help {
+    margin-top: 20px;
+  }
+  .login-help a {
+    color: darkviolet;
+    text-decoration: none;
+  }
+  .login-help a:hover {
+    text-decoration: underline;
+  }
+  .password-container {
+    position: relative;
+  }
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" placeholder="Username" id="username" required>
+      <div class="password-container">
+        <input type="password" placeholder="Password" id="password" minlength="5" required>
+        <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+      </div>
+      <input type="submit" value="Login">
+      <div class="login-help">
+        <a href="#">Forgot Password?</a> | <a href="#">New? Sign in</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      if (username === 'shahan' && password === 'shahan') {
+        window.location.href = 'https://bdhjs.github.io/aboutme/the%20body.html'; // Redirect to your website
+      } else {
+        alert('Invalid username or password!');
+      }
+    });
+
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById('password');
+      var passwordIcon = document.querySelector('.toggle-password');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        passwordIcon.textContent = '👁️';
+      } else {
+        passwordInput.type = 'password';
+        passwordIcon.textContent = '👁️';
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+ 
